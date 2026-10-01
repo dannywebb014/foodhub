@@ -15,7 +15,12 @@
   <!-- iOS ignores an SVG apple-touch-icon, so this one has to be a PNG. -->
   <link rel="apple-touch-icon" href="/foodhub/icon-180.png" sizes="180x180">
   <link rel="stylesheet" href="https://dannywebb014.github.io/lifeos/fonts.css">
-  <script type="module" crossorigin src="/foodhub/assets/index-Dm5S0ivC.js"></script>
+  <script>
+    // Paint the background of the last theme used before anything else, so opening
+    // food. (from lifeOS. or the home screen) doesn't flash light in dark mode.
+    try { document.documentElement.style.background = localStorage.getItem('food.dark') === '1' ? '#1a1e1a' : '#f4f1ea'; } catch { /* private mode */ }
+  </script>
+  <script type="module" crossorigin src="/foodhub/assets/index-D16EFo_2.js"></script>
 </head>
 <body style="margin:0">
   <div id="root"></div>
