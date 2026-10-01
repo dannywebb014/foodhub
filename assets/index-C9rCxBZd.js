@@ -284,9 +284,10 @@ Resources:`;for(let t of c){if(!t||typeof t!=`string`)throw Error(`@supabase/aut
     @media(min-width:768px){
       .app{padding:32px 40px calc(112px + env(safe-area-inset-bottom));max-width:880px}
       .header{margin:-32px -40px 28px;padding:calc(28px + env(safe-area-inset-top)) 40px 22px}
+      /* The dock sits in its own strip along the bottom, so content stops above it instead of scrolling underneath. */
+      body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:calc(84px + env(safe-area-inset-bottom));background:${i.bg};border-top:1px solid ${i.border};z-index:49}
       .bottom-nav{left:50%;right:auto;bottom:calc(20px + env(safe-area-inset-bottom));translate:-50% 0;gap:4px;padding:5px;border:1px solid ${i.border};border-radius:999px;
-        background:${i.bgCard}eb;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-        box-shadow:0 10px 30px ${e?`rgba(0,0,0,.5)`:`rgba(44,34,24,.16)`},0 1px 3px ${e?`rgba(0,0,0,.4)`:`rgba(44,34,24,.08)`}}
+background:${i.bgCard};box-shadow:${i.shadow}}
       .bottom-nav-btn{flex:none;flex-direction:row;gap:8px;padding:9px 18px;border-radius:999px;color:${i.textMuted};transition:background .15s,color .15s}
       .bottom-nav-btn:hover:not(.active){background:${i.bgCardHover};color:${i.text}}
       .bottom-nav-btn.active{background:${i.accent};color:#fff}
