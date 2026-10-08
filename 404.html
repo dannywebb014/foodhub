@@ -18,9 +18,13 @@
   <script>
     // Paint the background of the last theme used before anything else, so opening
     // food. (from lifeOS. or the home screen) doesn't flash light in dark mode.
-    try { document.documentElement.style.background = localStorage.getItem('food.dark') === '1' ? '#1a1e1a' : '#f4f1ea'; } catch { /* private mode */ }
+    try {
+      const a = localStorage.getItem('food.appearance');
+      const dark = a === 'dark' || (a !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.style.background = dark ? '#1a1e1a' : '#f4f1ea';
+    } catch { /* private mode */ }
   </script>
-  <script type="module" crossorigin src="/foodhub/assets/index-C-JUYk53.js"></script>
+  <script type="module" crossorigin src="/foodhub/assets/index-Dd9FxVL0.js"></script>
 </head>
 <body style="margin:0">
   <div id="root"></div>
