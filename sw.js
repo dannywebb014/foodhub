@@ -1,8 +1,8 @@
 // Keeps food. itself on the device so it opens with no signal. Its data comes
 // from the copy page.jsx saves after each load; Supabase requests pass straight
 // through. The build (web/vite.config.js) fills in the cache name and file list.
-const CACHE = 'food-mv1gu069'
-const FILES = ["./","./assets/index-Cjouh3P8.js","./embed.js","./assets/page-Bqt37Xvc.js","./icon.svg","./manifest.webmanifest","./index.html","/lifeos/fonts.css"]
+const CACHE = 'food-mv1h205b'
+const FILES = ["./","./assets/index-DFJ06Tow.js","./embed.js","./assets/page-a4yf8cMm.js","./icon.svg","./manifest.webmanifest","./index.html","/lifeos/fonts.css"]
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()))
